@@ -12,3 +12,25 @@ func TestCalculateTotal(t *testing.T) {
 		t.Errorf("got %v, want %v", result, expected)
 	}
 }
+
+func TestCalculateTotalEmpty(t *testing.T) {
+	orders := []float64{}
+	expected := 0.0
+
+	result := CalculateTotal(orders)
+
+	if result != expected {
+		t.Errorf("got %v, want %v", result, expected)
+	}
+}
+
+func TestCalculateTotalSingle(t *testing.T) {
+	orders := []float64{50.0}
+	expected := 50.0
+
+	result := CalculateTotal(orders)
+
+	if result != expected {
+		t.Errorf("got %v, want %v", result, expected)
+	}
+}
